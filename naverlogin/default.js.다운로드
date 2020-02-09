@@ -1,0 +1,18 @@
+﻿addInputEvent('id', 'id_area');
+addInputEvent('pw', 'pw_area');
+
+addDeleteButtonEvent('id', 'id_clear');
+addDeleteButtonEvent('pw', 'pw_clear');
+
+addNclicksEvent("log.naver");
+addNclicksEvent("log.chatbot");
+addNclicksEvent("log.banner");
+
+addNormalEvent('goNotAdult', goNotAdult);
+
+addNormalEventWithType('login_chk', function(e) { savedLong($('login_chk')); nclks_chk('login_chk', 'log.keepon', 'log.keepoff', '', e);}, "change");
+addNormalEvent('view_keyboard', function(e) { viewKeyboard();nclks_clsnm('view_keyboard', 'sp btn_key_down', 'log.kbdopen', 'log.kbdclose', '', e);});
+addNormalEvent('keyboard_switch', function(e) { switchkeyboard();nclks_clsnm('keyboard_switch', 'sp btn_char', 'log.symbols', 'log.character', '', e);});
+addNormalEventWithType('frmNIDLogin', function(e) { if (confirmSplitSubmit()) {} else {e.preventDefault();}}, "submit");
+
+ncaptchaInit();
